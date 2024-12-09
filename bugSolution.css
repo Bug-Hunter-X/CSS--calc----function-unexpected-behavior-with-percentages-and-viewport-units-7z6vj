@@ -1,0 +1,17 @@
+Instead of directly subtracting viewport units from percentages, consider using a more robust approach, such as using media queries or JavaScript to adjust the width based on the viewport size.
+
+```css
+/* bugSolution.css */
+@media (min-width: 768px) {
+  .element {
+    width: calc(50% - 50px);
+  }
+}
+
+@media (max-width: 767px) {
+  .element {
+    width: 100%;
+  }
+}
+```
+This method provides better control and adaptability across various screen resolutions, mitigating the inconsistencies associated with the `calc()` function's interpretation of percentages and viewport units.
